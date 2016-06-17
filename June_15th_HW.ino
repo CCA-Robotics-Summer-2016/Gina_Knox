@@ -11,7 +11,7 @@ void loop() {
 
   
  //Read ever 2nd # after 0 
-  for (int evenReadings = 0; evenReadings < numberOfReadings; evenReadings+1) {
+  for (int evenReadings = 0; evenReadings < numberOfReadings; evenReadings+2) {
     measurements[evenReadings] = analogRead(ldrPin);
     delay(1);
   }
@@ -20,7 +20,7 @@ void loop() {
   // calculate the average
   int sum = 0;
  
-  for (int evenReadings = 0; evenReadings < numberOfReadings; evenReadings+1) {
+  for (int evenReadings = 0; evenReadings < numberOfReadings; evenReadings+2) {
     sum = sum + measurements[evenReadings];
   }
  
@@ -37,7 +37,7 @@ int highestReading() {
  
   int latestHighestReading = 0;
  
-  for (int evenReadings = 0; evenReadings < numberOfReadings; evenReadings+1) 
+  for (int evenReadings = 0; evenReadings < numberOfReadings; evenReadings+2) 
   { 
     if (measurements[evenReadings] > measurements[latestHighestReading]) 
     {
